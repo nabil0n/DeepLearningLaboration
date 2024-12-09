@@ -4,4 +4,15 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "ale-py>=0.10.1",
+    "gymnasium==0.29.1",
+    "ipykernel>=6.29.5",
+    "ipython>=8.30.0",
+    "keras>=3.7.0",
+    "moviepy>=2.1.1",
+    "numpy==1.26.4",
+    "opencv-python>=4.10.0.84",
+    "tensorflow-cpu>=2.18.0",
+    "tensorflow>=2.18.0",
+]
