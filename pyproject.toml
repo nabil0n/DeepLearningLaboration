@@ -9,6 +9,7 @@ dependencies = [
     "gymnasium==0.29.1",
     "ipykernel>=6.29.5",
     "ipython>=8.30.0",
+    "jax>=0.4.37",
     "keras>=3.7.0",
     "moviepy>=2.1.1",
     "numpy==1.26.4",
@@ -16,4 +17,6 @@ dependencies = [
     "plotly>=5.24.1",
     "tensorflow-cpu>=2.18.0",
     "tensorflow>=2.18.0",
+    "torch==2.5.1+cu124",
+    "pandas==2.2.3",
 ]
