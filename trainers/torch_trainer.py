@@ -140,9 +140,10 @@ class TorchTrainer:
 
                 if done or truncated:
                     print(f"Episode {episode + 1}: Total Reward = {episode_reward}")
+                    self.max_rewards.append(np.max(episode_reward))
                     if episode % 20 == 0:
                         self.log_episode_stats(episode, episode_reward, episode_loss)
-                        torch.save(self.policy_net.state_dict(), f"models/torch/space_invaders_qmodel_{episode}.pt")
+                        torch.save(self.policy_net.state_dict(), f"../models/torch/space_invaders_qmodel_{episode}.pt")
                     break
                 
                 if self.steps_done % self.target_update_freq == 0:
@@ -156,11 +157,10 @@ class TorchTrainer:
         self.episode_rewards.append(episode_reward)
         self.avg_rewards.append(episode_reward)
         self.epsilon_history.append(self.epsilon)
-        self.max_rewards.append(np.max(self.episode_rewards))
         
         avg_100_episodes = np.mean(list(self.avg_rewards))
         
-        log_file = f"logs/torch/modelstats_{datetime.now():%d-%m}.csv"
+        log_file = f"../logs/torch/modelstats_{datetime.now():%d-%m}.csv"
         with open(log_file, "a", newline="") as f:
             writer = csv.writer(f)
             if os.stat(log_file).st_size == 0:
