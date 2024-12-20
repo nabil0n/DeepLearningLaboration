@@ -19,4 +19,8 @@ dependencies = [
     "tensorflow>=2.18.0",
     "torch==2.5.1+cu124",
     "pandas==2.2.3",
+    "jaxlib",
+    "flax",
+    "optax",
+    "statsmodels",
 ]
